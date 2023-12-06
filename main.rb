@@ -52,19 +52,21 @@ while true
         user_choice = gets.chomp.to_f
         # The 'case' statement is used to execute different code blocks based on the value of the 'user_choice' variable.
         case user_choice
+
         when 1
           puts "Enter amount to deposit:"
           amount = gets.chomp.to_f
           # The 'deposit' method is used to deposit the specified amount into the account.
           user.bank_account.deposit(amount)
          # The when 2
+
         when 2
           # The 'withdraw' method is used to withdraw the specified amount from the account.
           puts "Enter amount to withdraw:"
           amount = gets.chomp.to_f
           # The 'withdraw' method is used to withdraw the specified amount from the account.
           user.bank_account.withdraw(amount)
-          #
+
         when 3
           # The 'find' method is used to find the user with the given username.
           puts "Enter amount to transfer:"
@@ -122,7 +124,6 @@ while true
   when 4
     # Break the main loop if the user selects 'Exit'.
     break
-
   else
     # Display an error message if the user enters an invalid choice.
     puts "Invalid choice. Please enter 1, 2, or 3."
