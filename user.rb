@@ -11,6 +11,8 @@ class User
   # @param username [String] the username for the user
   # @param password [String] the password for the user
   # # @return [User] the newly created User object
+
+
   def initialize(username, password)
     # The 'username' and 'password_hash' instance variables are initialized with the given values.
     @username = username
@@ -22,6 +24,7 @@ class User
   # Checks if the provided password matches the user's password.
   # @param password [String] the password to be checked
   # @return [Boolean] true if the password is valid, false otherwise
+
   def valid_password?(password)
     # The '==' operator is used to compare the password with the password hash.
     # # The 'BCrypt::Password.new' method is used to create a new BCrypt::Password object from the password hash.
@@ -29,10 +32,13 @@ class User
   end
 
   # Resets the user's password.
-  def reset_password(new_password)
-    # The 'BCrypt::Password.create' method is used to create a new password hash from the new password.
-    @password_hash = BCrypt::Password.create(new_password)
-    # Display a success message.
-    puts "\nPassword reset successfully!"
+  def change_password(current_password, new_password)
+    if valid_password?(current_password)
+      @password_hash = BCrypt::Password.create(new_password)
+      puts "\nPassword changed successfully!"
+    else
+      puts "\nIncorrect current password. Please try again."
+      false  # Return false if password change fails
+    end
   end
 end
