@@ -1,3 +1,4 @@
+require 'digest'
 class BankAccount
   attr_accessor :balance
 
@@ -6,10 +7,11 @@ class BankAccount
   # @param balance [Numeric] The starting balance of the account (default: 0).
   def initialize(balance = 0.0) # default for float values
     @balance = balance.to_f
+    #hash the password
+    @password = Digest::SHA256.hexdigest(password)
   end
 
   # Deposits the specified amount into the account.
-
   # @param amount [Numeric] The amount to be deposited.
   def deposit(amount)
     @balance += amount.to_f

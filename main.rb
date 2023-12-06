@@ -38,26 +38,27 @@ while true
 
     if user && user.valid_password?(login_password)
       puts "\nLogin successful!"
-
+      # The 'while' loop is used to display the user menu and prompt the user to select an option.
       while true
         puts "\n1. Deposit"
         puts "2. Withdraw"
         puts "3. Transfer"
         puts "4. Check Balance"
         puts "5. Logout"
-        user_choice = gets.chomp.to_f
 
+        user_choice = gets.chomp.to_f
+        # The 'case' statement is used to execute different code blocks based on the value of the 'user_choice' variable.
         case user_choice
         when 1
           puts "Enter amount to deposit:"
           amount = gets.chomp.to_f
           user.bank_account.deposit(amount)
-
+         # The when 2 
         when 2
           puts "Enter amount to withdraw:"
           amount = gets.chomp.to_f
           user.bank_account.withdraw(amount)
-
+          #
         when 3
           puts "Enter amount to transfer:"
           amount = gets.chomp.to_f
