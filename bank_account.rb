@@ -7,8 +7,7 @@ class BankAccount
   # @param balance [Numeric] The starting balance of the account (default: 0).
   def initialize(balance = 0.0) # default for float values
     @balance = balance.to_f
-    #hash the password
-    @password = Digest::SHA256.hexdigest(password)
+    @password = Digest::SHA256.hexdigest(password) #hash the password
   end
 
   # Deposits the specified amount into the account.

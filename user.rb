@@ -32,9 +32,9 @@ class User
   end
 
   # Resets the user's password.
-  def change_password(current_password, new_password)
-    if valid_password?(current_password)
-      @password_hash = BCrypt::Password.create(new_password)
+  def change_password(current_password, new_password) # The 'change_password' method is used to reset the user's password.
+    if valid_password?(current_password) # The 'valid_password?' method is used to check if the password is valid.
+      @password_hash = BCrypt::Password.create(new_password) # The 'BCrypt::Password.create' method is used to create a new password hash.
       puts "\nPassword changed successfully!"
     else
       puts "\nIncorrect current password. Please try again."
