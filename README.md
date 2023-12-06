@@ -19,7 +19,7 @@ Banking Operations:
   Installation
 
 Clone the repository:
-git clone https://github.com/anaoliveira001/ruby-atm-system.git
+git clone https://github.com/anaoliveira001/ATM-Account.git
 
 Navigate to the project directory:
 cd ruby-atm-system
