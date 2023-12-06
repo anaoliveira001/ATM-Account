@@ -13,7 +13,8 @@ while true
   puts "2. Login"
   puts "3. Exit"
   # The variable 'choice' stores the user's input after converting it to an integer using 'to_i'.
-  choice = gets.chomp.to_i
+  choice = gets.chomp.to_f
+
 # The 'case' statement is used to execute different code blocks based on the value of the 'choice' variable.
   case choice
   when 1
@@ -44,22 +45,22 @@ while true
         puts "3. Transfer"
         puts "4. Check Balance"
         puts "5. Logout"
-        user_choice = gets.chomp.to_i
+        user_choice = gets.chomp.to_f
 
         case user_choice
         when 1
           puts "Enter amount to deposit:"
-          amount = gets.chomp.to_i
+          amount = gets.chomp.to_f
           user.bank_account.deposit(amount)
 
         when 2
           puts "Enter amount to withdraw:"
-          amount = gets.chomp.to_i
+          amount = gets.chomp.to_f
           user.bank_account.withdraw(amount)
 
         when 3
           puts "Enter amount to transfer:"
-          amount = gets.chomp.to_i
+          amount = gets.chomp.to_f
           puts "Enter recipient's username:"
           recipient_username = gets.chomp
           recipient = users.find { |u| u.username == recipient_username }
